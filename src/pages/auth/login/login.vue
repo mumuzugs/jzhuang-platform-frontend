@@ -8,7 +8,9 @@
     
     <!-- Logo 区域 -->
     <view class="logo-section">
-      <image class="logo" src="/static/logo.png" mode="aspectFit" />
+      <view class="logo-wrapper">
+        <Icon icon="mdi:home-city" :width="80" :height="80" color="#007AFF" />
+      </view>
       <text class="app-name">集装修</text>
       <text class="app-slogan">一站式装修服务平台</text>
     </view>
@@ -57,7 +59,9 @@
       <view class="other-login">
         <text class="other-login-text">其他登录方式</text>
         <view class="other-login-icons">
-          <image src="/static/icon-wechat.png" class="wechat-icon" @click="wechatLogin" />
+          <view class="wechat-btn" @click="wechatLogin">
+            <Icon icon="mdi:wechat" :width="40" :height="40" color="#07C160" />
+          </view>
         </view>
       </view>
       
@@ -79,23 +83,21 @@
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
+import { Icon } from '@iconify/vue'
 import { sendCode as apiSendCode, loginByCode } from '@/api/auth'
 import { useUserStore } from '@/store/user'
 
 const userStore = useUserStore()
 
-// 表单数据
 const form = reactive({
   phone: '',
   code: '',
 })
 
-// 状态
 const loading = ref(false)
 const countdown = ref(0)
 const agreed = ref(false)
 
-// 发送验证码
 async function sendCode() {
   if (!form.phone || form.phone.length !== 11) {
     uni.showToast({ title: '请输入正确的手机号', icon: 'none' })
@@ -105,8 +107,6 @@ async function sendCode() {
   try {
     await apiSendCode(form.phone)
     uni.showToast({ title: '验证码已发送', icon: 'success' })
-    
-    // 开始倒计时
     countdown.value = 60
     const timer = setInterval(() => {
       countdown.value--
@@ -119,7 +119,6 @@ async function sendCode() {
   }
 }
 
-// 登录
 async function handleLogin() {
   if (!agreed.value) {
     uni.showToast({ title: '请先阅读并同意用户协议', icon: 'none' })
@@ -143,12 +142,9 @@ async function handleLogin() {
       code: form.code,
     })
     
-    // 保存登录信息
     userStore.loginSuccess(res.access_token, res.user)
-    
     uni.showToast({ title: '登录成功', icon: 'success' })
     
-    // 跳转到首页
     setTimeout(() => {
       uni.switchTab({ url: '/pages/home/home' })
     }, 1000)
@@ -159,13 +155,11 @@ async function handleLogin() {
   }
 }
 
-// 微信登录
 function wechatLogin() {
   // #ifdef MP-WEIXIN
   wx.getPhoneNumber({
     success: async (res) => {
       console.log('微信手机号', res)
-      // TODO: 调用后端微信登录接口
     },
     fail: (err) => {
       console.error('微信登录失败', err)
@@ -178,15 +172,13 @@ function wechatLogin() {
   // #endif
 }
 
-// 同意协议
 function onAgreementChange(e: any) {
   agreed.value = e.detail.value.length > 0
 }
 
-// 查看协议
 function goToAgreement(type: 'user' | 'privacy') {
   uni.navigateTo({
-    url: `/pages/common/webview?url=https://jizhuang.cn/${type}.html`
+    url: `/pages/common/webview/webview?url=https://jizhuang.cn/${type}.html`
   })
 }
 </script>
@@ -233,10 +225,16 @@ function goToAgreement(type: 'user' | 'privacy') {
   align-items: center;
   padding-top: 160rpx;
   
-  .logo {
+  .logo-wrapper {
     width: 160rpx;
     height: 160rpx;
+    background: #fff;
+    border-radius: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 24rpx;
+    box-shadow: 0 8rpx 32rpx rgba(0, 122, 255, 0.15);
   }
   
   .app-name {
@@ -348,9 +346,8 @@ function goToAgreement(type: 'user' | 'privacy') {
       display: flex;
       gap: 48rpx;
       
-      .wechat-icon {
-        width: 80rpx;
-        height: 80rpx;
+      .wechat-btn {
+        padding: 16rpx;
       }
     }
   }

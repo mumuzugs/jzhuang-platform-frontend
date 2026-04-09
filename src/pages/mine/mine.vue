@@ -79,6 +79,9 @@
       <button class="logout-btn" @click="handleLogout">退出登录</button>
     </view>
     
+    <!-- 底部 TabBar -->
+    <TabBar />
+    
     <!-- 底部占位 -->
     <view class="bottom-placeholder"></view>
   </view>
@@ -86,6 +89,8 @@
 
 <script setup lang="ts">
 import { onMounted } from 'vue'
+import { Icon } from '@iconify/vue'
+import TabBar from '@/components/TabBar.vue'
 import { useUserStore } from '@/store/user'
 
 const userStore = useUserStore()
@@ -140,7 +145,7 @@ async function handleLogout() {
 .mine-container {
   min-height: 100vh;
   background: #f5f5f5;
-  padding-bottom: env(safe-area-inset-bottom);
+  padding-bottom: 180rpx;
 }
 
 .user-section {

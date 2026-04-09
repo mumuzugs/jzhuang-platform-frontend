@@ -80,11 +80,15 @@
     <view class="bottom-action" v-if="projectList.length > 0">
       <button class="action-btn" @click="startInspection">新建验房</button>
     </view>
+    <!-- 底部 TabBar -->
+    <TabBar />
   </view>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { Icon } from '@iconify/vue'
+import TabBar from '@/components/TabBar.vue'
 import { getInspectionList, type InspectionProject } from '@/api/inspection'
 
 const tabs = [
@@ -178,6 +182,7 @@ function getStatusClass(report: any) {
   background: #f5f5f5;
   display: flex;
   flex-direction: column;
+  padding-bottom: 100rpx;
 }
 
 .tabs {

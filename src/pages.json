@@ -73,43 +73,5 @@
     "navigationBarTitleText": "集装修",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
-  },
-  "tabBar": {
-    "color": "#999999",
-    "selectedColor": "#007AFF",
-    "backgroundColor": "#FFFFFF",
-    "borderStyle": "black",
-    "list": [
-      {
-        "pagePath": "pages/home/home",
-        "text": "首页",
-        "iconPath": "static/tabbar/home.png",
-        "selectedIconPath": "static/tabbar/home-active.png"
-      },
-      {
-        "pagePath": "pages/inspection/list/inspection-list",
-        "text": "验房",
-        "iconPath": "static/tabbar/inspection.png",
-        "selectedIconPath": "static/tabbar/inspection-active.png"
-      },
-      {
-        "pagePath": "pages/design/list/design-list",
-        "text": "设计",
-        "iconPath": "static/tabbar/design.png",
-        "selectedIconPath": "static/tabbar/design-active.png"
-      },
-      {
-        "pagePath": "pages/construction/list/construction-list",
-        "text": "施工",
-        "iconPath": "static/tabbar/construction.png",
-        "selectedIconPath": "static/tabbar/construction-active.png"
-      },
-      {
-        "pagePath": "pages/mine/mine",
-        "text": "我的",
-        "iconPath": "static/tabbar/mine.png",
-        "selectedIconPath": "static/tabbar/mine-active.png"
-      }
-    ]
   }
 }

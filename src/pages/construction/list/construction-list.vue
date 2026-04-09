@@ -74,11 +74,15 @@
     <view class="bottom-action" v-if="projectList.length > 0">
       <button class="action-btn" @click="createProject">新建项目</button>
     </view>
+    <!-- 底部 TabBar -->
+    <TabBar />
   </view>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { Icon } from '@iconify/vue'
+import TabBar from '@/components/TabBar.vue'
 import { getProjectList, type ConstructionProject } from '@/api/construction'
 
 const projectList = ref<ConstructionProject[]>([])
@@ -164,6 +168,7 @@ function getNodeStatusClass(status: string) {
   background: #f5f5f5;
   display: flex;
   flex-direction: column;
+  padding-bottom: 100rpx;
 }
 
 .list-scroll {

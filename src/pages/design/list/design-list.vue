@@ -65,11 +65,15 @@
     <view class="bottom-action" v-if="designList.length > 0">
       <button class="action-btn" @click="startDesign">新建方案</button>
     </view>
+    <!-- 底部 TabBar -->
+    <TabBar />
   </view>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { Icon } from '@iconify/vue'
+import TabBar from '@/components/TabBar.vue'
 import { getDesignList, type Style } from '@/api/design'
 
 const tabs = [
@@ -142,6 +146,7 @@ function getStyleName(styleCode: string) {
   background: #f5f5f5;
   display: flex;
   flex-direction: column;
+  padding-bottom: 100rpx;
 }
 
 .tabs {
