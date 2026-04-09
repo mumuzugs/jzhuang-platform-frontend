@@ -1,16 +1,115 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
-		}
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	}
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "path": "pages/home/home",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "path": "pages/inspection/list/inspection-list",
+      "style": {
+        "navigationBarTitleText": "AI验房"
+      }
+    },
+    {
+      "path": "pages/inspection/detail/inspection-detail",
+      "style": {
+        "navigationBarTitleText": "验房报告"
+      }
+    },
+    {
+      "path": "pages/design/list/design-list",
+      "style": {
+        "navigationBarTitleText": "设计方案"
+      }
+    },
+    {
+      "path": "pages/design/result/design-result",
+      "style": {
+        "navigationBarTitleText": "设计方案"
+      }
+    },
+    {
+      "path": "pages/construction/list/construction-list",
+      "style": {
+        "navigationBarTitleText": "我的施工"
+      }
+    },
+    {
+      "path": "pages/construction/detail/construction-detail",
+      "style": {
+        "navigationBarTitleText": "施工详情"
+      }
+    },
+    {
+      "path": "pages/mine/mine",
+      "style": {
+        "navigationBarTitleText": "我的"
+      }
+    },
+    {
+      "path": "pages/auth/login/login",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/auth/register/register",
+      "style": {
+        "navigationBarTitleText": "注册"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "集装修",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#007AFF",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/inspection/list/inspection-list",
+        "text": "验房",
+        "iconPath": "static/tabbar/inspection.png",
+        "selectedIconPath": "static/tabbar/inspection-active.png"
+      },
+      {
+        "pagePath": "pages/design/list/design-list",
+        "text": "设计",
+        "iconPath": "static/tabbar/design.png",
+        "selectedIconPath": "static/tabbar/design-active.png"
+      },
+      {
+        "pagePath": "pages/construction/list/construction-list",
+        "text": "施工",
+        "iconPath": "static/tabbar/construction.png",
+        "selectedIconPath": "static/tabbar/construction-active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "static/tabbar/mine.png",
+        "selectedIconPath": "static/tabbar/mine-active.png"
+      }
+    ]
+  }
 }

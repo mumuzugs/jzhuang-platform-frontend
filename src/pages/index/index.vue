@@ -1,41 +1,49 @@
 <template>
-  <view class="content">
-    <image class="logo" src="/static/logo.png" />
-    <view class="text-area">
-      <text class="title">{{ title }}</text>
-    </view>
+  <view class="index-container">
+    <text class="title">集装修</text>
+    <text class="subtitle">一站式装修服务平台</text>
   </view>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-const title = ref('Hello')
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  // 检查登录状态
+  const token = uni.getStorageSync('jzhuang_token')
+  if (token) {
+    // 已登录，跳转到首页
+    setTimeout(() => {
+      uni.switchTab({ url: '/pages/home/home' })
+    }, 1500)
+  } else {
+    // 未登录，跳转到登录页
+    setTimeout(() => {
+      uni.redirectTo({ url: '/pages/auth/login/login' })
+    }, 1500)
+  }
+})
 </script>
 
-<style>
-.content {
+<style lang="scss" scoped>
+.index-container {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.logo {
-  height: 200rpx;
-  width: 200rpx;
-  margin-top: 200rpx;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50rpx;
-}
-
-.text-area {
-  display: flex;
-  justify-content: center;
-}
-
-.title {
-  font-size: 36rpx;
-  color: #8f8f94;
+  background: linear-gradient(180deg, #f0f5ff 0%, #ffffff 100%);
+  
+  .title {
+    font-size: 64rpx;
+    font-weight: 700;
+    color: #007AFF;
+    margin-bottom: 16rpx;
+  }
+  
+  .subtitle {
+    font-size: 28rpx;
+    color: #999;
+  }
 }
 </style>
