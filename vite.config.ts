@@ -9,8 +9,4 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  // HBuilderX 兼容配置
-  optimizeDeps: {
-    include: ['pinia'],
-  },
 })
