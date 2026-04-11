@@ -31,24 +31,6 @@
       }
     },
     {
-      "path": "pages/design/result/design-result",
-      "style": {
-        "navigationBarTitleText": "设计方案"
-      }
-    },
-    {
-      "path": "pages/construction/list/construction-list",
-      "style": {
-        "navigationBarTitleText": "我的施工"
-      }
-    },
-    {
-      "path": "pages/construction/detail/construction-detail",
-      "style": {
-        "navigationBarTitleText": "施工详情"
-      }
-    },
-    {
       "path": "pages/mine/mine",
       "style": {
         "navigationBarTitleText": "我的"
