@@ -146,7 +146,7 @@ async function handleLogin() {
     uni.showToast({ title: '登录成功', icon: 'success' })
     
     setTimeout(() => {
-      uni.reLaunch({ url: '/pages/home/home' })
+      uni.navigateTo({ url: '/pages/home/home' })
     }, 1000)
   } catch (e: any) {
     uni.showToast({ title: e.message || '登录失败', icon: 'none' })

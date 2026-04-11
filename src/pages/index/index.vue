@@ -14,7 +14,7 @@ onMounted(() => {
   if (token) {
     // 已登录，跳转到首页
     setTimeout(() => {
-      uni.reLaunch({ url: '/pages/home/home' })
+      uni.navigateTo({ url: '/pages/home/home' })
     }, 1500)
   } else {
     // 未登录，跳转到登录页
