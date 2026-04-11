@@ -174,7 +174,7 @@ function onEntryClick(item: any) {
     uni.navigateTo({ url: '/pages/auth/login/login' })
     return
   }
-  uni.switchTab({ url: item.path })
+  uni.reLaunch({ url: item.path })
 }
 
 function goToInspection() {

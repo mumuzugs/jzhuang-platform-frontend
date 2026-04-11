@@ -67,7 +67,7 @@ onMounted(() => {
 function switchTab(item: any) {
   if (currentPath.value === item.pagePath) return
   
-  uni.switchTab({
+  uni.reLaunch({
     url: item.pagePath
   })
 }
