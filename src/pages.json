@@ -19,15 +19,15 @@
       }
     },
     {
-      "path": "pages/inspection/detail/inspection-detail",
-      "style": {
-        "navigationBarTitleText": "验房报告"
-      }
-    },
-    {
       "path": "pages/design/list/design-list",
       "style": {
         "navigationBarTitleText": "设计方案"
+      }
+    },
+    {
+      "path": "pages/construction/list/construction-list",
+      "style": {
+        "navigationBarTitleText": "我的施工"
       }
     },
     {
@@ -41,12 +41,6 @@
       "style": {
         "navigationBarTitleText": "登录",
         "navigationStyle": "custom"
-      }
-    },
-    {
-      "path": "pages/auth/register/register",
-      "style": {
-        "navigationBarTitleText": "注册"
       }
     }
   ],
