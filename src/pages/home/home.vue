@@ -174,7 +174,7 @@ function onEntryClick(item: any) {
     uni.navigateTo({ url: '/pages/auth/login/login' })
     return
   }
-  uni.navigateTo({ url: item.path })
+  uni.switchTab({ url: item.path })
 }
 
 function goToInspection() {
@@ -182,7 +182,7 @@ function goToInspection() {
     uni.navigateTo({ url: '/pages/auth/login/login' })
     return
   }
-  uni.navigateTo({ url: '/pages/inspection/list/inspection-list' })
+  uni.switchTab({ url: '/pages/inspection/list/inspection-list' })
 }
 
 function goToDesign() {
@@ -190,7 +190,7 @@ function goToDesign() {
     uni.navigateTo({ url: '/pages/auth/login/login' })
     return
   }
-  uni.navigateTo({ url: '/pages/design/list/design-list' })
+  uni.switchTab({ url: '/pages/design/list/design-list' })
 }
 
 function goToConstruction() {
@@ -198,7 +198,7 @@ function goToConstruction() {
     uni.navigateTo({ url: '/pages/auth/login/login' })
     return
   }
-  uni.navigateTo({ url: '/pages/construction/list/construction-list' })
+  uni.switchTab({ url: '/pages/construction/list/construction-list' })
 }
 </script>
 
